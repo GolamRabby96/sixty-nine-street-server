@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 //passport initialize
 
 // Database connection
-mongoose.connect(`mongodb+srv://TeamIt:TeamItPass0102@cluster0.dibao.mongodb.net/SixtyNinethStreet?retryWrites=true&w=majority`,{
+mongoose.connect("mongodb://localhost:27017/69street",{
 			useNewUrlParser: true,
 			useUnifiedTopology: false,
 		}
@@ -47,7 +47,7 @@ app.use("/api", hireAgentRouter);
 //testing heroku deployment
 
 app.get("/", (req, res) => {
-	res.send("checking heroku deployment");
+	res.send("System working properly");
 });
 
 //default error handler
