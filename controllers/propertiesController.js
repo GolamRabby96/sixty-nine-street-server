@@ -29,7 +29,9 @@ exports.propertiesAdd = async (req, res) => {
 			image_two,
 			image_three,
 		} = req.body;
-
+		console.log(image_one);
+		console.log(image_two);
+		console.log(image_three);
 		const addProperties = new Property({
 			property_for,
 			property_type,
@@ -57,7 +59,7 @@ exports.propertiesAdd = async (req, res) => {
 		await addProperties.save();
 		res.status(200).json({
 			data: addProperties,
-			message: "signup successfully",
+			message: "Property add successfully",
 		});
 	} catch (err) {
 		res.status(500).json({

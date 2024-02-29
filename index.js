@@ -24,12 +24,12 @@ app.use(express.static("properties"));
 app.use(fileUpload());
 
 client.connect((err) => {
-	const PropertyDB = client.db("SixtyNinethStreet").collection("Property");
+	const PropertyDB = client.db("local").collection("Property");
 	const UserReviewsDB = client
-		.db("SixtyNinethStreet")
+		.db("local")
 		.collection("UserReviews");
 	const AgentDB = client
-		.db("SixtyNinethStreet")
+		.db("local")
 		.collection("Agents");
 
 	app.post("/addProperties", (req, res) => {

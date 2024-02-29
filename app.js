@@ -13,11 +13,12 @@ app.use(cors());
 app.use(bodyParser.json());
 
 //passport initialize
-
-// Database connection
-mongoose.connect("mongodb://localhost:27017/69street",{
+// const uri = "mongodb://0.0.0.0:27017/local";
+// Database connection mongodb://localhost:27017/69street
+mongoose.set('strictQuery', false);
+mongoose.connect("mongodb://0.0.0.0:27017/local",{
 			useNewUrlParser: true,
-			useUnifiedTopology: false,
+			useUnifiedTopology: false
 		}
 	)
 	.then(() => console.log("Database connection established"))
@@ -32,6 +33,7 @@ const userAuthRouter = require("./routers/userAuthRouter");
 const homeLoanRouter = require("./routers/homeLoanRouter");
 const requirementRouter = require("./routers/requirementRouter");
 const hireAgentRouter = require("./routers/hireAgentRouter");
+const { MongoClient } = require("mongodb");
 
 //app middleware
 
