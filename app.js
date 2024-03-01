@@ -12,15 +12,12 @@ app.use(morgan("dev"));
 app.use(cors());
 app.use(bodyParser.json());
 
-const dbuser = "sixtynine";
-const DbPass = "sixtynine";
-const dbname= "sixtynine"
 //passport initialize
 // const uri = "mongodb://0.0.0.0:27017/local";
 // Database connection mongodb://localhost:27017/69street
 //  `mongodb+srv://${dbuser}:${DbPass}@cluster0.dibao.mongodb.net/${dbname}?retryWrites=true&w=majority`;
 mongoose.set('strictQuery', false);
-const uri = `mongodb+srv://sixtynine:sixtynine@sixtynine.msrxqeh.mongodb.net/`;
+const uri = `mongodb+srv://${process.env.dbuser}:${process.env.DbPass}@${process.env.dbname}.msrxqeh.mongodb.net/`;
 mongoose.connect(uri,{
 			useNewUrlParser: true,
 			useUnifiedTopology: true
@@ -54,7 +51,7 @@ app.use("/api", homeLoanRouter);
 app.use("/api", requirementRouter);
 app.use("/api", hireAgentRouter);
 
-//testing heroku deployment
+//testing Render deployment
 
 app.get("/", (req, res) => {
 	res.send("System working properly right now");

@@ -29,9 +29,6 @@ exports.propertiesAdd = async (req, res) => {
 			image_two,
 			image_three,
 		} = req.body;
-		console.log(image_one);
-		console.log(image_two);
-		console.log(image_three);
 		const addProperties = new Property({
 			property_for,
 			property_type,
