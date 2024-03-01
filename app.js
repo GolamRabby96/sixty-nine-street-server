@@ -15,9 +15,10 @@ app.use(bodyParser.json());
 //passport initialize
 // const uri = "mongodb://0.0.0.0:27017/local";
 // Database connection mongodb://localhost:27017/69street
-//  `mongodb+srv://${dbuser}:${DbPass}@cluster0.dibao.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+//  `mongodb+srv://${process.env.dbuser}:${process.env.DbPass}@${process.env.dbname}.msrxqeh.mongodb.net/`;
+
 mongoose.set('strictQuery', false);
-const uri = `mongodb+srv://${process.env.dbuser}:${process.env.DbPass}@${process.env.dbname}.msrxqeh.mongodb.net/`;
+const uri = `mongodb+srv://sixtynine:sixtynine@$sixtynine.msrxqeh.mongodb.net/?retryWrites=true&w=majority&appName=sixtynine`;
 mongoose.connect(uri,{
 			useNewUrlParser: true,
 			useUnifiedTopology: true
