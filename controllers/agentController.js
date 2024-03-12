@@ -53,7 +53,7 @@ exports.getAgent = async (req, res) => {
 		const agentList = await Agents.find({});
 		res.status(200).json({
 			data: agentList,
-			message: "Agent Data done successfully",
+			message: "Agent Data received",
 		});
 	} catch (err) {
 		res.status(500).json({
