@@ -5,8 +5,8 @@ const {
 	agentAdd,
 	getAgent,
 	singleAgent,
-    deleteAgent,
-    updateAgent
+	deleteAgent,
+	updateAgent
 } = require("../controllers/agentController");
 
 router.post("/addAgent", agentAdd);

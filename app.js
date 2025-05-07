@@ -18,16 +18,17 @@ app.use(bodyParser.json());
 //  `mongodb+srv://${process.env.dbuser}:${process.env.DbPass}@${process.env.dbname}.msrxqeh.mongodb.net/`;
 
 mongoose.set('strictQuery', false);
-const uri = `mongodb+srv://sixtynine:sixtynine@$sixtynine.msrxqeh.mongodb.net/?retryWrites=true&w=majority&appName=sixtynine`;
-mongoose.connect(uri,{
-			useNewUrlParser: true,
-			useUnifiedTopology: true
-		}
-	)
+const uri = `mongodb+srv://sixtynine:sixtynine@sixtynine.msrxqeh.mongodb.net/?retryWrites=true&w=majority&appName=sixtynine`;
+mongoose.connect(uri, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true
+}
+)
 	.then(() => console.log("Database connection established"))
 	.catch((err) => console.log(err));
 
 
+// const uri = "mongodb+srv://sixtynine:<db_password>@sixtynine.msrxqeh.mongodb.net/?retryWrites=true&w=majority&appName=sixtynine";
 
 // import routes
 
