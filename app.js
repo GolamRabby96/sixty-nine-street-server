@@ -59,6 +59,10 @@ app.get("/", (req, res) => {
 	res.send("System working properly right now");
 });
 
+app.get("/helth", (req, res) => {
+	res.send("Helth are oke");
+});
+
 //default error handler
 
 const errorHandler = (err, req, res, next) => {
